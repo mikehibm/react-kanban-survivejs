@@ -9,9 +9,14 @@ const PATHS = {
 	build: path.join(__dirname, 'build')
 };
 
+process.env.BABEL_ENV = TARGET;
+
 const common = {
 	entry: {
 		app: PATHS.app
+	},
+	resolve: {
+		extensions: ['', '.js', '.jsx']
 	},
 	output: {
 		path: PATHS.build,
@@ -23,12 +28,17 @@ const common = {
 				test: /\.css$/,
 				loaders: ['style', 'css'],
 				include: PATHS.app
+			},
+			{
+				test: /\.jsx?$/,
+				loaders: ['babel?cacheDirectory'],
+				include: PATHS.app
 			}
 		]
 	}
 };
 
-//Default config
+//DEVELOPMENT
 if (TARGET === 'start' || !TARGET) {
 	module.exports = merge(common, {
 		devtool: 'eval-source-map',
@@ -54,6 +64,7 @@ if (TARGET === 'start' || !TARGET) {
 	});
 }
 
+//PRODUCTION
 if (TARGET === 'build') {
 	module.exports = merge(common, {});
 }

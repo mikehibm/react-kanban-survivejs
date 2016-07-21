@@ -1,8 +1,34 @@
+import uuid from 'node-uuid';
 import React from 'react';
-import Note from './Note.jsx';
+import Notes from './Notes.jsx';
 
 export default class App extends React.Component {
-	render() {
-		return <Note />;
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			notes: [
+					{ id: uuid.v4(), task: 'Learn React' },
+					{ id: uuid.v4(), task: 'Learn Webpack' }
+				]
+		};
+
 	}
+
+	render() {
+		const notes = this.state.notes;
+
+		return (
+			<div>
+				<button onClick={this.addNote}>+</button>
+				<Notes notes={notes} />
+			</div>
+		);
+	}
+
+	addNote = () => {
+		this.setState({
+			notes: [...this.state.notes, { id: uuid.v4(), task: 'New task'}]
+		});
+	};
 }

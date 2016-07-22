@@ -1,9 +1,0 @@
-{
-	"esversion": 6,
-	"browser": true,
-	"camelcase": false,
-	"indent": 2,
-	"latedef": false,
-	"newcap": true,
-	"quotmark": "single"
-}

@@ -1,5 +1,7 @@
 build
 
+**/*.VC.db
+**/*.VC.db*
 
 # Logs
 logs

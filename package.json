@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "alt": "^0.18.5",
+    "alt-container": "^1.0.2",
+    "alt-utils": "^1.0.0",
+    "node-uuid": "^1.4.7"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -13,7 +17,6 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-survivejs-kanban": "^0.3.3",
     "css-loader": "^0.23.1",
-    "node-uuid": "^1.4.7",
     "npm-install-webpack-plugin": "^4.0.4",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",

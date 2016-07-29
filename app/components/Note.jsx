@@ -19,9 +19,9 @@ export default class Note extends React.Component {
 
   renderEdit() {
     return <input type="text"
-      ref={ (e) => e ? e.selectionStart = this.props.task.length : null }
+      ref={ (e) => e ? e.selectionStart = this.props.note.task.length : null }
       autoFocus={true}
-      defaultValue={this.props.task}
+      defaultValue={this.props.note.task}
       onBlur={this.finishEdit}
       onKeyPress={this.checkEnter}
       />;
@@ -32,7 +32,7 @@ export default class Note extends React.Component {
     return (
       <div onClick={this.edit}>
         {onDelete ? this.renderDelete() : null}
-        <span className="task">{this.props.task}</span>
+        <span className="task">{this.props.note.task}</span>
       </div>
     );
   }

@@ -10,7 +10,7 @@ export default class App extends React.Component {
     return (
       <div>
         <h3>Lanes</h3>
-        <button className="add-lane" onClick={this.addLane}>+ Add</button>
+        <button className="add-lane" onClick={this.addLane}>+ Add Lane</button>
         <AltContainer
           stores={[LaneStore]}
           inject={ { lanes: () => LaneStore.getState().lanes || [] }}

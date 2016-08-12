@@ -32,12 +32,25 @@ h1, h2, h3 {
 	transition: 0.6s;
 }
 
-.note .task {
+.note .value {
 	display: inline-block;
 	margin: 0;
 }
 
-.note .delete-note {
+.lane-header .delete {
+	display: block;
+	position: relative;
+	top: 1em;
+	left: -1em;
+	padding: 4px 7.4px;
+	background-color: #fdfdfd;
+	border: 1px solid #888;
+	border-radius: 14px;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.note .delete {
 	display: block;
 	float: right;
 	position: relative;
@@ -51,7 +64,7 @@ h1, h2, h3 {
 	visibility: hidden;
 }
 
-.note:hover .delete-note {
+.lane-header:hover .delete, .note:hover .delete {
 	visibility: visible;
 	transition: 0.6s;
 }
